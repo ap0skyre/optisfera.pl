@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 220" width="240" height="106">
+  <defs>
+    <style>
+      .word-opti { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 600; }
+      .word-sfera { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700; }
+      .tagline { font-family: 'Segoe UI', Arial, sans-serif; letter-spacing: 3px; }
+    </style>
+  </defs>
+
+  <!-- house icon -->
+  <g transform="translate(160,10)">
+    <path d="M90 0 L180 70 L155 70 L155 145 L25 145 L25 70 L0 70 Z" fill="#1e8449"/>
+    <!-- leaf -->
+    <g transform="translate(65,45)">
+      <path d="M30 70 C10 60 5 30 25 5 C45 20 55 45 45 65 C55 60 60 50 60 40 C65 55 60 68 45 75 C38 78 30 76 30 70 Z" fill="#ffffff"/>
+      <path d="M30 70 C25 55 22 40 45 20" fill="none" stroke="#1e8449" stroke-width="3" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- wordmark -->
+  <text x="250" y="200" text-anchor="middle" font-size="54">
+    <tspan class="word-opti" fill="#6b6b6b">Opti</tspan><tspan class="word-sfera" fill="#1e8449">Sfera</tspan>
+  </text>
+  <text x="250" y="218" text-anchor="middle" font-size="12" class="tagline" fill="#8a8a8a">HURTOWNIA DLA DOMU I OGRODU</text>
+</svg>
