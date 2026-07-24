@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://optisfera.pl/sitemap.xml
