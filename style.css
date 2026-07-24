@@ -61,6 +61,18 @@ nav a::after{
 nav a:hover, nav a.active{ color: var(--green-light); }
 nav a:hover::after, nav a.active::after{ width:100%; }
 
+/* ---------- mobile nav toggle (hidden on desktop) ---------- */
+.nav-toggle{ display:none; }
+.nav-burger{ display:none; cursor:pointer; padding:6px; position:relative; z-index:110; }
+.nav-burger span{
+  display:block;
+  width:24px; height:2px;
+  background: var(--text);
+  margin:5px 0;
+  border-radius:2px;
+  transition: transform .25s ease, opacity .2s ease;
+}
+
 /* ---------- hero ---------- */
 .hero{
   position: relative;
@@ -303,13 +315,49 @@ footer{
 }
 
 /* ---------- responsive ---------- */
-@media (max-width: 720px){
-  nav ul{ gap: 1.3rem; }
-  .brand img{ height: 40px; }
-  .contact-grid{ grid-template-columns: 1fr; }
-  .panel{ padding: 1.8rem; }
+@media (max-width: 900px){
+  nav ul{ gap: 1.5rem; }
 }
-@media (max-width: 560px){
-  header{ flex-wrap:wrap; gap:.7rem; }
-  nav ul{ flex-wrap:wrap; justify-content:center; gap:.7rem 1.1rem; }
+
+@media (max-width: 720px){
+  .brand img{ height: 40px; }
+
+  /* hamburger menu */
+  .nav-burger{ display:block; }
+  nav{
+    position: fixed;
+    top: 0; right: 0;
+    height: 100vh;
+    width: min(78vw, 320px);
+    background: var(--bg-alt);
+    border-left: 1px solid var(--border);
+    padding: 5.5rem 2rem 2rem;
+    transform: translateX(100%);
+    transition: transform .3s ease;
+    z-index: 105;
+  }
+  nav ul{ flex-direction: column; gap: 1.4rem; }
+  nav a{ font-size: 1.05rem; display:block; }
+  .nav-toggle:checked ~ nav{ transform: translateX(0); }
+  .nav-toggle:checked ~ .nav-burger span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+  .nav-toggle:checked ~ .nav-burger span:nth-child(2){ opacity:0; }
+  .nav-toggle:checked ~ .nav-burger span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+  .hero{ padding: 3.5rem 6vw 3rem; }
+  .hero p{ font-size: 1rem; }
+  main{ padding: 2.5rem 0 3.5rem; }
+  section{ margin-bottom: 2.8rem; }
+  .panel{ padding: 1.8rem; }
+  .cta-band{ padding: 2.2rem 1.4rem; }
+  .contact-grid{ grid-template-columns: 1fr; }
+  .card, .col-card{ padding: 1.4rem; }
+}
+
+@media (max-width: 480px){
+  .wrap{ padding: 0 5vw; }
+  .hero h1{ font-size: 1.75rem; }
+  .eyebrow{ font-size:.7rem; letter-spacing:2px; }
+  .btn-row{ flex-direction: column; align-items: stretch; }
+  .btn{ text-align:center; }
+  footer{ font-size:.78rem; line-height:1.9; }
 }
